@@ -1,0 +1,9 @@
+version: 2
+
+macros:
+  - name: query_comment
+    description: '{{ doc("query_comment") }}'
+    
+  - name: limit_table
+    description: '{{ doc("limit_table") }}'
+  

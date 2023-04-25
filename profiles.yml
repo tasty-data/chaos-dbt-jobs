@@ -1,0 +1,17 @@
+config:
+  send_anonymous_usage_stats: False
+  use_colors: True
+
+chaos:
+  target: qa-postgres
+  outputs:
+    qa-postgres:
+      type: postgres
+      host: postgres-postgresql.postgres.svc.cluster.local
+      user: tastyusr
+      password: tastyusrpass123
+      port: 5432
+      dbname: analytics_tastyworks
+      schema: public
+      threads: 12
+

@@ -1,0 +1,64 @@
+---
+# ==================
+# Project Details
+# =======================
+name: tastydata
+config-version: 2
+version: 2.0.0
+profile: chaos
+require-dbt-version: ">=1.2.0"
+
+# ==================
+# File Path Configs
+# ==================
+seed-paths: ["data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+model-paths: ["models"]
+target-path: "target"
+test-paths: ["models/tests"]
+
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['dbt_project_evaluatior', 'spark_utils', 'dbt_utils']
+
+clean-targets:
+  - "target"
+  - "dbt_modules"
+  - "dbt_packages"
+
+# ==================
+# Snowflake / Postgres Configs
+# ==================
+quoting:
+  database: false
+  identifier: false
+  schema: false
+
+# A string to inject as a comment in each query that dbt runs against your database.
+# This comment can be used to attribute SQL statements to specific dbt resources like models and tests.
+query-comment:
+  comment: "{{ query_comment(node) }}"
+  append: true
+
+# ==================
+# Variable Configs
+# ==================
+vars:
+
+
+# ==================
+# Run Hooks
+# ==================
+on-run-end:
+
+# ==================
+# Tastydata Model Configs
+# ==================
+models:
+
+# ==================
+# Snapshot Configs
+# ==================
+snapshots:
+  +copy_grants: true
