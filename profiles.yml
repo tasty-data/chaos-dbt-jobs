@@ -3,15 +3,14 @@ config:
   use_colors: True
 
 chaos:
-  target: qa-postgres
+  target: raw_db_fivetran
   outputs:
-    qa-postgres:
+    raw_db_fivetran:
       type: postgres
       host: postgres-postgresql.postgres.svc.cluster.local
-      user: tastyusr
-      password: tastyusrpass123
+      user: raw_src_usr
+      password: raw_src_usr123
       port: 5432
-      dbname: analytics_tastyworks
+      dbname: raw_db_fivetran
       schema: public
       threads: 12
-

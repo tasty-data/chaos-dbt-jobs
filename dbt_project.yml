@@ -45,6 +45,12 @@ query-comment:
 # Variable Configs
 # ==================
 vars:
+  # Mailchimp Package
+  mailchimp_database: raw_db_fivetran
+  mailchimp_schema: staging__mailchimp_staging
+  mailchimp_source:
+    database: raw_db_fivetran
+    mailchimp_schema: mailchimp_tw
 
 
 # ==================
@@ -56,6 +62,17 @@ on-run-end:
 # Tastydata Model Configs
 # ==================
 models:
+
+  mailchimp:
+    +tags:
+      - dbt_packages
+      - mailchimp
+
+  mailchimp_source:
+    +schema: staging__mailchimp_staging
+    +tags:
+      - dbt_packages
+      - mailchimp
 
 # ==================
 # Snapshot Configs
