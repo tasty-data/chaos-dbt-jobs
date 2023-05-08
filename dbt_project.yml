@@ -16,11 +16,7 @@ macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 model-paths: ["models"]
 target-path: "target"
-test-paths: ["models/tests"]
 
-dispatch:
-  - macro_namespace: dbt_utils
-    search_order: ['dbt_project_evaluatior', 'spark_utils', 'dbt_utils']
 
 clean-targets:
   - "target"
@@ -41,40 +37,7 @@ query-comment:
   comment: "{{ query_comment(node) }}"
   append: true
 
-# ==================
-# Variable Configs
-# ==================
-vars:
-  # Mailchimp Package
-  mailchimp_database: raw_db_fivetran
-  mailchimp_schema: staging__mailchimp_staging
-  mailchimp_source:
-    database: raw_db_fivetran
-    mailchimp_schema: mailchimp_tw
-
-
-# ==================
-# Run Hooks
-# ==================
-on-run-end:
-
-# ==================
-# Tastydata Model Configs
-# ==================
-models:
-
-  mailchimp:
-    +tags:
-      - dbt_packages
-      - mailchimp
-
-  mailchimp_source:
-    +schema: staging__mailchimp_staging
-    +tags:
-      - dbt_packages
-      - mailchimp
-
-# ==================
+  # ==================
 # Snapshot Configs
 # ==================
 snapshots:

@@ -30,13 +30,13 @@ def get_sources_data(folder):
     sources_data = []
     for root, dirs, files in os.walk(folder):
         for file in files:
-            if file.endswith(".yml") and os.path.basename(file) == 'sources.yml':
+            if file.endswith(".yml") and os.path.basename(file) == 'datasources.yml':
                 filepath = os.path.join(root, file)
                 with open(filepath, 'r') as f:
                     data = yaml.load(f, Loader=yaml.FullLoader)
                     version = data.get("version")
                     if version == 2:
-                        sources = data.get("sources")
+                        sources = data.get("datasources")
                         for source in sources:
                             name = source.get("name")
                             database = source.get("database")
