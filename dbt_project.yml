@@ -23,6 +23,18 @@ clean-targets:
   - "dbt_modules"
   - "dbt_packages"
 
+seeds:
+  tastydata:
+    schema: thing
+    aws_chaos_billing_2023_01_01_2023_05_01:
+      schema: thing
+      +column_types:
+        date: date
+        accountnum: varchar
+        service: varchar
+        unblendedcost: varchar
+
+
 # ==================
 # Snowflake / Postgres Configs
 # ==================

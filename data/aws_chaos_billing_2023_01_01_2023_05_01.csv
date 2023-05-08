@@ -1,4 +1,4 @@
-Date,AccountNum,Service,UnblendedCost
+date,accountnum,service,unblendedcost
 2023-03-07,360293670841,Amazon Simple Storage Service,0.0000684
 2023-03-07,360293670841,AWS Key Management Service,0
 2023-03-07,360293670841,Tax,10.51
