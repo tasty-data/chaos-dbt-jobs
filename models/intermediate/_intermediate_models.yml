@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: int_revenue_by_date
+    description: <markdown_string>
+    config:
+      materialized: table
+      sort: date
