@@ -23,6 +23,6 @@ jobs:
         with:
           file_or_dir: '.'
           config_file: .yamllint.yml
-          format: parsable
+          format: github
           strict: false
           no_warnings: true
